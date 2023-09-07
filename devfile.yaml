@@ -11,6 +11,13 @@ components:
   - name: db
     container:
       image: postgres
+      env:
+        - name: POSTGRES_USER
+          value : postgres
+        - name: POSTGRES_PASSWORD
+          value: postgres
+        - name: POSTGRES_DB
+          value: postgres
       endpoints:
         - name: db-5432
           targetPort: 5432
