@@ -8,6 +8,12 @@ components:
       endpoints:
         - name: http-3000
           targetPort: 3000
+  - name: db
+    container:
+      image: postgres
+      endpoints:
+        - name: db-5432
+          targetPort: 5432
 commands:
   - id: install
     exec:
