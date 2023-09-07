@@ -2,6 +2,10 @@ schemaVersion: 2.2.0
 metadata:
   name: helloworld-example
 components:
+  - name: dbvol
+    volume:
+      ephemeral: true
+      size: 4G
   - name: dev-tooling
     container:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
@@ -21,6 +25,9 @@ components:
       endpoints:
         - name: db-5432
           targetPort: 5432
+      volumeMounts:
+        - name: dbvol
+          path: /var/lib/postgresql/data
 commands:
   - id: install
     exec:
