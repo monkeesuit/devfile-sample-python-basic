@@ -15,6 +15,7 @@ components:
   - name: db
     container:
       image: postgres
+      command: ["chmod", "777", "/var/lib/postgresql/data", "/var/run/postgresql"]
       env:
         - name: POSTGRES_USER
           value : postgres
@@ -25,9 +26,6 @@ components:
       endpoints:
         - name: db-5432
           targetPort: 5432
-      volumeMounts:
-        - name: dbvol
-          path: /var/lib/postgresql/data:z
 commands:
   - id: install
     exec:
