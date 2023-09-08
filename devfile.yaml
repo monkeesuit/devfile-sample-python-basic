@@ -2,10 +2,6 @@ schemaVersion: 2.2.0
 metadata:
   name: helloworld-example
 components:
-  - name: dbvol
-    volume:
-      ephemeral: true
-      size: 4G
   - name: dev-tooling
     container:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
@@ -15,7 +11,6 @@ components:
   - name: db
     container:
       image: postgres
-      command: ["chmod", "777", "/var/lib/postgresql/data", "/var/run/postgresql"]
       env:
         - name: POSTGRES_USER
           value : postgres
@@ -23,6 +18,8 @@ components:
           value: postgres
         - name: POSTGRES_DB
           value: postgres
+        - name: PGDATA
+          value: /tmp/pgdata
       endpoints:
         - name: db-5432
           targetPort: 5432
