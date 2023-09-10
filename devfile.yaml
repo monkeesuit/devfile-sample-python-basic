@@ -20,6 +20,9 @@ components:
           value: postgres
         - name: PGDATA
           value: /tmp/pgdata
+      endpoints:
+        - name: db-5432
+          targetPort: 5432
 commands:
   - id: install
     exec:
