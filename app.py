@@ -10,7 +10,7 @@ def hello():
     with psycopg.connect(host="localhost", dbname="postgres", user="postgres", password="postgres") as conn:
         with conn.cursor() as cur:
 
-        # Execute a command: this creates a new table
+            # Execute a command: this creates a new table
             cur.execute("""
                 CREATE TABLE test (
                     id serial PRIMARY KEY,
@@ -42,4 +42,4 @@ if __name__ == '__main__':
     port = os.environ.get('FLASK_PORT') or 3000
     port = int(port)
 
-    app.run(port=port,host='0.0.0.0')
+    app.run(port=port,host='127.0.0.1')

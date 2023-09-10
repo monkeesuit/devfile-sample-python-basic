@@ -31,9 +31,6 @@ commands:
         kind: build
   - id: run
     exec:
-      previewUrl:
-        port: 3000
-        path: /
       commandLine: python app.py
       component: dev-tooling
       workingDir: ${PROJECT_SOURCE}
