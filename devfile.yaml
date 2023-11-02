@@ -38,3 +38,6 @@ commands:
       group:
         isDefault: true
         kind: run
+events:
+  postStart:
+    - install
