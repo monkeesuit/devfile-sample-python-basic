@@ -39,5 +39,5 @@ commands:
         isDefault: true
         kind: run
 events:
-  postStart:
+  preStart:
     - install
