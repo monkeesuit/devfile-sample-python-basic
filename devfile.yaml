@@ -36,7 +36,7 @@ commands:
       component: dev-tooling
       workingDir: ${PROJECT_SOURCE}
       group:
-        kind: build
+        kind: run
         isDesfault: true
   - id: deploy
     composite:
