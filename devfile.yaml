@@ -29,7 +29,7 @@ commands:
       workingDir: ${PROJECT_SOURCE}
       group:
         kind: build
-        isDesfault: true
+        isDefault: true
   - id: run
     exec:
       commandLine: python app.py
@@ -37,7 +37,7 @@ commands:
       workingDir: ${PROJECT_SOURCE}
       group:
         kind: run
-        isDesfault: true
+        isDefault: true
   - id: deploy
     composite:
       commands:
