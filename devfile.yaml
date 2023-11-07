@@ -4,10 +4,7 @@ metadata:
 components:
   - name: dev-tooling
     container:
-      image: quay.io/devfile/universal-developer-image:ubi8-latest
-  - name: python
-    container:
-      image: python
+      image: sabbir1cse/ubuntu-python-pip-supervisor
       endpoints:
         - name: http-3000
           targetPort: 3000
