@@ -43,6 +43,3 @@ commands:
       commands:
         - install
         - run
-      group:
-        kind: deploy
-        isDefault: true
