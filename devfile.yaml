@@ -24,7 +24,7 @@ components:
 commands:
   - id: install
     exec:
-      commandLine: pip install -r requirements.txt
+      commandLine: pip install -r requirements.txt && echo "requirements installed"
       component: dev-tooling
       workingDir: ${PROJECT_SOURCE}
       group:
@@ -38,12 +38,6 @@ commands:
       group:
         kind: run
         isDefault: true
-  - id: deploy
-    composite:
-      commands:
-        - install
-        - run
 events:
   postStart:
     - install
-    - deploy
