@@ -4,6 +4,9 @@ metadata:
 components:
   - name: dev-tooling
     container:
+      image: quay.io/devfile/universal-developer-image:ubi8-latest
+  - name: python
+    container:
       image: python
       endpoints:
         - name: http-3000
@@ -24,11 +27,20 @@ components:
 commands:
   - id: install
     exec:
-      commandLine: python -m ensurepip --upgrade && pip install -r requirements.txt
+      commandLine: pip install -r requirements.txt
       component: dev-tooling
       workingDir: ${PROJECT_SOURCE}
+      group:
+        isDefault: true
+        kind: build
   - id: run
     exec:
       commandLine: python app.py
       component: dev-tooling
       workingDir: ${PROJECT_SOURCE}
+      group:
+        isDefault: true
+        kind: run
+events:
+  postStart:
+    - install
