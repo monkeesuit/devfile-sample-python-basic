@@ -4,7 +4,7 @@ metadata:
 components:
   - name: dev-tooling
     container:
-      image: sabbir1cse/ubuntu-python-pip-supervisor
+      image: samuelmishra/python-env
       endpoints:
         - name: http-3000
           targetPort: 3000
