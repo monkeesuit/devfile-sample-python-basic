@@ -27,14 +27,8 @@ commands:
       commandLine: python -m ensurepip --upgrade && pip install -r requirements.txt
       component: dev-tooling
       workingDir: ${PROJECT_SOURCE}
-      group:
-        kind: build
-        isDefault: true
   - id: run
     exec:
       commandLine: python app.py
       component: dev-tooling
       workingDir: ${PROJECT_SOURCE}
-      group:
-        kind: run
-        isDefault: true
