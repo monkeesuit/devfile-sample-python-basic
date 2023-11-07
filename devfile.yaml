@@ -4,7 +4,7 @@ metadata:
 components:
   - name: dev-tooling
     container:
-      image: quay.io/devfile/universal-developer-image:ubi8-latest
+      image: python
       endpoints:
         - name: http-3000
           targetPort: 3000
