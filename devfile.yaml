@@ -43,3 +43,7 @@ commands:
       commands:
         - install
         - run
+events:
+  postStart:
+    - install
+    - deploy
