@@ -21,20 +21,3 @@ components:
           value: postgres
         - name: PGDATA
           value: /tmp/pgdata
-commands:
-  - id: install
-    exec:
-      commandLine: pip3 install -r requirements.txt
-      component: py
-      workingDir: ${PROJECT_SOURCE}
-      group:
-        isDefault: true
-        kind: build
-  - id: run
-    exec:
-      commandLine: python3 app.py
-      component: py
-      workingDir: ${PROJECT_SOURCE}
-      group:
-        isDefault: true
-        kind: run
