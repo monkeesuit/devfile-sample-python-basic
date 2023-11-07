@@ -11,7 +11,7 @@ components:
           protocol: https
       env:
         - name: KUBEDOCK_ENABLED
-          value: true
+          value: "true"
         - name: HOME
           value: /tmp
   - name: db
