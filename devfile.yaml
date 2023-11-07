@@ -27,17 +27,13 @@ commands:
       commandLine: pip install -r requirements.txt
       component: dev-tooling
       workingDir: ${PROJECT_SOURCE}
-      group:
-        isDefault: true
-        kind: build
   - id: run
     exec:
       commandLine: python app.py
       component: dev-tooling
       workingDir: ${PROJECT_SOURCE}
-      group:
-        isDefault: true
-        kind: run
 events:
+  preStart:
+    - install
   postStart:
     - install
