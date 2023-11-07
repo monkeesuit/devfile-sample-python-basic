@@ -5,6 +5,9 @@ components:
   - name: dev-tooling
     container:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
+  - name: py
+    container:
+      image: samuelmishra/python-env
 #      endpoints:
 #        - name: http-3000
 #          targetPort: 3000
