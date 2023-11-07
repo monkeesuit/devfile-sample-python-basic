@@ -2,6 +2,9 @@ schemaVersion: 2.0.0
 metadata:
   name: helloworld-example
 components:
+  - name: dev-tooling
+    container:
+      image: quay.io/devfile/universal-developer-image:ubi8-latest
   - name: py
     container:
       image: samuelmishra/python-env
