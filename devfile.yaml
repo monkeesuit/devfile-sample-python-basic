@@ -9,11 +9,6 @@ components:
         - name: http-3000
           targetPort: 3000
           protocol: https
-      env:
-        - name: KUBEDOCK_ENABLED
-          value: "true"
-        - name: HOME
-          value: /tmp
   - name: db
     container:
       image: postgres
@@ -29,7 +24,7 @@ components:
 commands:
   - id: install
     exec:
-      commandLine: pip install -r requirements.txt && echo "requirements installed"
+      commandLine: pip install -r requirements.txt
       component: dev-tooling
       workingDir: ${PROJECT_SOURCE}
       group:
