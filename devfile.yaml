@@ -9,6 +9,11 @@ components:
         - name: http-3000
           targetPort: 3000
           protocol: https
+      env:
+        - name: KUBEDOCK_ENABLED
+          value: true
+        - name: HOME
+          value: /tmp
   - name: db
     container:
       image: postgres
